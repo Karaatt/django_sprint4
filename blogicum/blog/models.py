@@ -57,7 +57,8 @@ class Post(models.Model):
             "можно делать отложенные публикации."
         )
     )
-    image = models.ImageField('Изображение', upload_to='posts_images', blank=True)
+    image = models.ImageField('Изображение', upload_to='posts_images',
+                              blank=True)
     author = models.ForeignKey(
         User,
         on_delete=models.CASCADE,
@@ -120,3 +121,4 @@ class Comment(models.Model):
 
     def __str__(self):
         return self.text
+    
