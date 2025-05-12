@@ -11,8 +11,8 @@ class Category(models.Model):
         'Идентификатор',
         unique=True,
         help_text=(
-            "Идентификатор страницы для URL; "
-            "разрешены символы латиницы, цифры, дефис и подчёркивание."
+            "Идентификатор страницы для URL; разрешены символы "
+            "латиницы, цифры, дефис и подчёркивание."
         )
     )
     is_published = models.BooleanField(
@@ -93,7 +93,7 @@ class Post(models.Model):
 
     def __str__(self):
         return self.title
-    
+
 
 class Comment(models.Model):
     text = models.TextField('Текст комментария')
@@ -104,7 +104,7 @@ class Comment(models.Model):
         verbose_name='Комментарий',
         related_name='comments',
     )
-    created_at = models.DateTimeField('Дата',auto_now_add=True)
+    created_at = models.DateTimeField('Дата', auto_now_add=True)
     author = models.ForeignKey(
         User,
         on_delete=models.CASCADE,
